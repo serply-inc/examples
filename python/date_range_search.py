@@ -11,7 +11,7 @@ headers = {
 # hl: return results in English
 # tbs: parameter to specify time ( https://illusioncity.net/pcweb-google-operators/ )
 query = {
-    "q": "elon musk",
+    "q": "barak obama",
     "hl": "en",
     "tbs": "cdr:1,cd_min:01/01/2013,cd_max:12/31/2013"
 }
@@ -21,5 +21,6 @@ url = f"https://api.goog.io/v1/search/" + urllib.parse.urlencode(query)
 print(url)
 
 resp = requests.get(url, headers=headers)
+print(resp.headers)
 results = resp.json()
 print(results)
