@@ -20,7 +20,7 @@ def build_urls():
     urls = []
     for x in range(5):
         query["start"] = x * 10 # step the search results by 10
-        urls.append("https://api.goog.io/v1/search/" + urllib.parse.urlencode(query))
+        urls.append("https://api.serply.io/v1/search/" + urllib.parse.urlencode(query))
 
     return urls
 
