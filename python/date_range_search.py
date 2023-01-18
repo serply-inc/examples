@@ -17,7 +17,7 @@ query = {
 }
 
 # build to url to make request
-url = f"https://api.goog.io/v1/search/" + urllib.parse.urlencode(query)
+url = f"https://api.serply.io/v1/search/" + urllib.parse.urlencode(query)
 print(url)
 
 resp = requests.get(url, headers=headers)
