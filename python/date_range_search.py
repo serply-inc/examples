@@ -2,9 +2,7 @@ import urllib
 import requests
 
 # set the api key in headers
-headers = {
-    "apikey": "YOUR_API_KEY"
-}
+headers = {"apikey": "YOUR_API_KEY"}
 
 # format the query
 # q: the search term
@@ -13,7 +11,7 @@ headers = {
 query = {
     "q": "barak obama",
     "hl": "en",
-    "tbs": "cdr:1,cd_min:01/01/2013,cd_max:12/31/2013"
+    "tbs": "cdr:1,cd_min:01/01/2013,cd_max:12/31/2013",
 }
 
 # build to url to make request
