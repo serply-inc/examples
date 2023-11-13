@@ -24,7 +24,6 @@ f = csv.writer(open("images.csv", "w", newline=''))
 # Write CSV Header, If you dont need that, remove this line
 f.writerow(["src", "title", "href"])
 
-
 for result in results["image_results"]:
     f.writerow([
         result['image']['src'], 
