@@ -48,7 +48,7 @@ print(f"Next 100 results: {results}")
 
 # Getting local results from France
 # q: the search term
-# hl: 
+# hl: return results in French
 # lr: what language to return results
 # cr: country 
 
