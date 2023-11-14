@@ -76,3 +76,17 @@ url = f"https://api.serply.io/v1/search/" + urllib.parse.urlencode(query)
 resp = requests.get(url, headers=headers)
 results = resp.json()
 print(f"Next 100 results: {results}")
+
+import csv
+
+f = csv.writer(open("locals.csv", "w", newline=''))
+
+# Write CSV Header, If you dont need that, remove this line
+f.writerow(["title", "description", "link"])
+
+for result in results["results"]:
+    f.writerow([
+        result['title'], 
+        result['description'], 
+        result['link']
+    ])
