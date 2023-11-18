@@ -9,14 +9,15 @@ headers = {"apikey": API_KEY}
 # format the query
 # q: the search term
 # hl: return results in English
-query = {"q": "coffee and donuts in portlan"}
+query = {"q": "donuts in portland"}
 
 # build to url to make request
 url = f"https://api.serply.io/v1/maps/" + urllib.parse.urlencode(query)
+print(url)
 
 resp = requests.get(url, headers=headers)
 results = resp.json()
-print(url)
+print(results)
 
 import csv
 
@@ -29,7 +30,7 @@ for entry in results["places"]:
     f.writerow([
         entry['place'], 
         entry['description'], 
-        entry['address'],
-        entry['website']["url"] if entry['website'] else None,
+        entry['address_string'],
+        entry['website']["link"] if 'website' in entry else None,
         entry['reviews']["link"],
     ])
